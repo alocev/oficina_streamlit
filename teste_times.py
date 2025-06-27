@@ -80,7 +80,8 @@ elif categoria == "Torcida":
         key = "torcida_multiselect"
     )
     df_filtrado = df[df["time"].isin(times_select)]
-    fig = px.pie(df_filtrado, names = "time", values = "torcida(milhões)", title = "Participação das Torcidas por Time", textinfo = "label+value", hole = 0.4, color_discrete_sequence = px.colors.qualitative.Safe)
+    fig = px.pie(df_filtrado, names = "time", values = "torcida(milhões)", title = "Participação das Torcidas por Time", color_discrete_sequence = px.colors.qualitative.Safe)
+    fig.update_traces(textinfo = "label+value")
     fig.update_layout(title_x = 0.5, showlegend = True)
     st.plotly_chart(fig, use_container_width = True)
 
