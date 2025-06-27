@@ -66,7 +66,7 @@ elif categoria == "Mundial":
         key = "mundial_multiselect"
     )
     df_filtrado = df[df["time"].isin(times_select)]
-    fig = px.bar(df_filtrado, x = "mundiais", y = "time", orientation = "h", color = "time", text = "mundiais",title = "Times Brasileiros com Títulos do Mundial")
+    fig = px.bar(df_filtrado, x = "mundial", y = "time", orientation = "h", color = "time", text = "mundial",title = "Times Brasileiros com Títulos do Mundial")
     fig.update_layout(xaxis_title = "Títulos do Mundial", yaxis_title = "Time", showlegend = False)
     st.plotly_chart(fig, use_container_width = True)
 
